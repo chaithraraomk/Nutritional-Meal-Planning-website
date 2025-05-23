@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutritional Meal Planning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <h2 class="logo">BalanceFuel</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#" class="protected-link" data-page="mealplan.html">Meal Plans</a></li>
+            <li><a href="#" class="protected-link" data-page="recipes.html">Recipes</a></li>
+            <li><a href="#" class="protected-link" data-page="contact.html">Contact Us</a></li>
+
+            <!-- New Fitness Dropdown Menu -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Fitness ⬇</a>
+                <div class="dropdown-content">
+                    <a href="#" class="protected-link" data-page="exercise.html">Exercise</a>
+                    <a href="#" class="protected-link" data-page="yoga.html">Yoga</a>
+                </div>
+            </li>
+
+            <li><button id="logout-btn" class="btn" style="display: none;">Logout</button></li>
+        </ul>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Plan Your Nutrition, Stay Healthy!</h1>
+        <p>Discover personalized meal plans and delicious recipes.</p>
+        <a href="login.html" class="btn" id="getStartedBtn">Get Started</a> 
+    </header>
+
+    <!-- Meal Plans Section -->
+    <section class="meal-plans">
+        <h3>Meal Plans</h3>
+        <div class="meal-plan-container">
+            <a href="#" class="protected-link meal-plan" data-page="weight-loss.html">
+                <img src="images/weight-loss.jpg" alt="Weight Loss Plan">
+                <span>Weight Loss Plan<br>$70</span>
+            </a>
+            <a href="#" class="protected-link meal-plan" data-page="muscle-gain.html">
+                <img src="images/muscle-gain.jpg" alt="Muscle Gain Plan">
+                <span>Muscle Gain Plan<br>$60</span>
+            </a>
+            <a href="#" class="protected-link meal-plan" data-page="balanced-diet.html">
+                <img src="images/balanced-diet.jpg" alt="Balanced Diet Plan">
+                <span>Balanced Diet Plan<br>$50</span>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Recipes Section -->
+    <section class="recipes">
+        <h3>Recipes</h3>
+        <div class="recipe-container">
+            <a href="#" class="protected-link recipe" data-page="grilled-chicken-salad.html">
+                <img src="images/grilled-chicken-salad.jpg" alt="Grilled Chicken Salad">
+                <span>Grilled Chicken Salad<br>$30</span>
+            </a>
+            <a href="#" class="protected-link recipe" data-page="quinoa-bowl.html">
+                <img src="images/quinoa-bowl.jpg" alt="Quinoa Bowl">
+                <span>Quinoa Bowl<br>$20</span>
+            </a>
+            <a href="#" class="protected-link recipe" data-page="vegetable-stir-fry.html">
+                <img src="images/vegetable-stir-fry.jpg" alt="Vegetable Stir Fry">
+                <span>Vegetable Stir Fry<br>$15</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nutritional Meal Planning. All rights reserved.</p>
+    </footer>
+
+    <script src="auth.js"></script> <!-- Authentication script -->
+</body>
+</html>

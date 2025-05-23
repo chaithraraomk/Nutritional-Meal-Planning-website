@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga & Wellness - BalanceFuel</title>
+    <link rel="stylesheet" href="yoexstyles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <h2 class="logo">BalanceFuel</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mealplan.html">Meal Plans</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="yoga.html" class="active">Yoga</a></li>
+            <li><a href="exercise.html">Exercise</a></li>
+            <li><button id="logout-btn" class="btn">Logout</button></li>
+            <button type="button" class="btn" onclick="window.location.href='index.html'">
+                Back
+            </button>
+        </ul>
+    </nav>
+
+    <header class="hero yoga-hero">
+        <h1>Embrace Wellness with Daily Exercise!</h1>
+        <p>Improve flexibility and stay healthy</p>
+    </header>
+    <section class="exercise-plans">
+        <h2>Recommended Daily Exercises</h2>
+        <div class="exercise-container">
+            <div class="exercise-card">
+                <img src="images/pushups.jpg" alt="Push-ups">
+                <h3>Push-ups</h3>
+                <p>Duration: 15 mins | Calories Burned: 100 kcal</p>
+                <button class="learn-more" onclick="openExerciseGuide('Push-ups')">Learn More</button>
+            </div>
+            <div class="exercise-card">
+                <img src="images/jumping-jacks.jpg" alt="Jumping Jacks">
+                <h3>Jumping Jacks</h3>
+                <p>Duration: 10 mins | Calories Burned: 80 kcal</p>
+                <button class="learn-more" onclick="openExerciseGuide('Jumping Jacks')">Learn More</button>
+            </div>
+            <div class="exercise-card">
+                <img src="images/squats.jpg" alt="Squats">
+                <h3>Squats</h3>
+                <p>Duration: 20 mins | Calories Burned: 150 kcal</p>
+                <button class="learn-more" onclick="openExerciseGuide('Squats')">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BalanceFuel. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openYogaGuide(pose) {
+            window.location.href = `yoga-guide.html?pose=${encodeURIComponent(pose)}`;
+        }
+
+        function openExerciseGuide(exercise) {
+            window.location.href = `exercise-guide.html?exercise=${encodeURIComponent(exercise)}`;
+        }
+    </script>
+</body>
+</html>

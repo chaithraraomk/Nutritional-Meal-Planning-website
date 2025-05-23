@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balanced Diet & Fitness</title>
+    <style>
+        /* Global Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #101112, #071a20, #4a606a);
+            animation: bgAnimation 6s infinite alternate;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: left; }
+            100% { background-position: right; }
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: 0.4s;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff8c00, #ff2a5d);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: 0.3s ease-in-out;
+            position: relative;
+        }
+        
+
+        .nav-links li a::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 0;
+            background: #ff2a5d;
+            transition: width 0.4s ease-in-out;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            background: url('fitness-background.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
+        }
+
+        .hero p {
+            font-size: 1.7rem;
+            opacity: 0;
+            animation: fadeInUp 2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button */
+        .btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #ff416c;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 60px;
+        }
+
+        .contact-container {
+            width: 40%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: slideUp 1s ease-in-out;
+            margin: auto;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            background: #fff;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        input:focus, textarea:focus {
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            background: linear-gradient(45deg, #5cb85c, #00c853);
+            color: white;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(92, 184, 92, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            margin-top: 40px;
+        }
+        .contact-section {
+    text-align: center;
+    padding: 80px;
+}
+
+.contact-container {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: slideUp 1s ease-in-out;
+    margin: auto;
+    color: white;
+}
+
+.contact-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff8c00, #ff2a5d);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.contact-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* Floating Labels */
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+input:focus + label, input:not(:placeholder-shown) + label,
+textarea:focus + label, textarea:not(:placeholder-shown) + label {
+    top: 10px;
+    font-size: 0.9rem;
+    color: #ff2a5d;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(45deg, #5cb85c, #00c853);
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(92, 184, 92, 0.9);
+}
+
+/* Animation */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <h2 class="logo">Healthy Lifestyle</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Diet Plans</a></li>
+            <li><a href="#">Exercise</a></li>
+            <li><a href="#">Yoga</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Embrace a Balanced Diet & Active Lifestyle</h1>
+        <p>Eat healthy, exercise daily, and practice yoga for a healthier life.</p>
+        <a href="#" class="btn">Get Started</a>
+    </header>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2>📩 Contact Us</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Healthy Lifestyle. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

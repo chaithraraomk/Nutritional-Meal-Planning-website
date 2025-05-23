@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Guide - BalanceFuel</title>
+    <link rel="stylesheet" href="yoexstyles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <h2 class="logo">BalanceFuel</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="exercise.html" class="active">Back to Exercises</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero exercise-hero">
+        <h1 id="exercise-title">Exercise Guide</h1>
+        <p id="exercise-description">Learn proper techniques and benefits of each exercise.</p>
+    </header>
+
+    <section class="exercise-details">
+        <div class="exercise-info">
+            <img id="exercise-image" src="" alt="Exercise">
+            <p id="exercise-steps">Loading...</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BalanceFuel. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const exercise = params.get("exercise");
+
+        const exerciseData = {
+            "Push-ups": {
+                image: "images/pushups.jpg",
+                description: "Strengthens upper body and core.",
+                steps: "1. Get into a high plank position. 2. Lower your body until your chest nearly touches the floor. 3. Push yourself back up."
+            },
+            "Jumping Jacks": {
+                image: "images/jumping-jacks.jpg",
+                description: "Great for cardio and full-body workout.",
+                steps: "1. Stand straight with feet together. 2. Jump while spreading arms and legs. 3. Return to the starting position."
+            },
+            "Squats": {
+                image: "images/squats.jpg",
+                description: "Builds lower body strength.",
+                steps: "1. Stand with feet shoulder-width apart. 2. Lower your hips as if sitting back. 3. Push back up to standing."
+            }
+        };
+
+        if (exerciseData[exercise]) {
+            document.getElementById("exercise-title").innerText = exercise;
+            document.getElementById("exercise-description").innerText = exerciseData[exercise].description;
+            document.getElementById("exercise-image").src = exerciseData[exercise].image;
+            document.getElementById("exercise-steps").innerText = exerciseData[exercise].steps;
+        }
+    </script>
+</body>
+</html>

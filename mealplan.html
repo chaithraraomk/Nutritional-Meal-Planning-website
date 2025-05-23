@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutritional Meal Planning</title>
+    
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #990b0b, #7b1108, #590f08);
+            color: white;
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: linear-gradient(90deg, #131313, #1a1919);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: yellow;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('healthy-food.jpg') center/cover;
+            padding: 80px 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero h1 {
+            font-size: 36px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(255, 126, 95, 0.5);
+        }
+
+        .btn:hover {
+            background: #d85741;
+            transform: scale(1.1);
+        }
+
+        /* Meal Plans & Recipes */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .meal-plans, .recipes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .meal-plan, .recipe {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            width: 30%;
+            min-width: 250px;
+            text-align: center;
+            box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .meal-plan:hover, .recipe:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.5);
+        }
+
+        .meal-plan img, .recipe img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .meal-plans, .recipes {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .meal-plan, .recipe {
+                width: 80%;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #990b0b, #7b1108, #590f08);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+    animation: fadeInBody 1.5s ease-in-out;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: linear-gradient(90deg, #131313, #1a1919);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Hero Section */
+.hero {
+    background: url('healthy-food.jpg') center/cover;
+    padding: 80px 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeZoom 1.5s ease-in-out;
+}
+
+@keyframes fadeZoom {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Button Enhancements */
+.btn {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 5px 15px rgba(255, 126, 95, 0.5);
+    position: relative;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.btn:hover {
+    background: #d85741;
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(255, 126, 95, 0.7);
+}
+
+@keyframes pulse {
+    from { transform: scale(1); box-shadow: 0px 5px 15px rgba(255, 126, 95, 0.5); }
+    to { transform: scale(1.05); box-shadow: 0px 10px 25px rgba(255, 126, 95, 0.7); }
+}
+
+/* Meal Plans & Recipes */
+.meal-plans, .recipes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.meal-plan, .recipe {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    width: 30%;
+    min-width: 250px;
+    text-align: center;
+    box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    font-weight: bold;
+    animation: fadeUp 1s ease-in-out;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.meal-plan:hover, .recipe:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.5);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 30px;
+    animation: fadeInBody 2s ease-in-out;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h2 class="logo">Nutritional Meal Planning</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mealplan.html">Meal Plans</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Plan Your Nutrition, Stay Healthy!</h1>
+        <p>Discover personalized meal plans and delicious recipes.</p>
+        <a href="login.html" class="btn">Get Started</a>
+    </header>
+
+    <!-- Meal Plans Section -->
+    <div class="container">
+        <h2>Select Your Meal Plan</h2>
+        <div class="meal-plans">
+            <div class="meal-plan" data-link="payment.html">
+                <img src="images/a.jpg" alt="Weight Loss Plan">
+                <h3>Steamed fish with sautéed vegetables<br>$70</h3>
+                <p>A plan to help you lose weight</p>
+            </div>
+            <div class="meal-plan" data-link="payment.html">
+                <img src="images/i.jpg" alt="Muscle Gain Plan">
+                <h3>Grilled steak with quinoa and roasted vegetables<br>$60</h3>
+                <p>A plan to help you gain muscle</p>
+            </div>
+            <div class="meal-plan" data-link="payment.html">
+                <img src="images/h.jpg" alt="Muscle Gain Plan">
+                <h3>Salmon with brown rice and steamed broccoli<br>$60</h3>
+                <p>A plan to help you gain muscle</p>
+            </div>
+
+            <div class="meal-plan" data-link="payment.html">
+                <img src="images/g.jpg" alt="Balanced Diet Plan">
+                <h3>Grilled chicken sandwich with a side salad<br>$50</h3>
+                <p>A plan for a balanced diet</p>
+            </div>
+            <div class="meal-plan" data-link="payment.html">
+                <img src="images/f.jpg" alt="Balanced Diet Plan">
+                <h3>Vegetable stir-fry with tofu and brown rice<br>$50</h3>
+                <p>A plan for a balanced diet</p>
+            </div>
+            <div class="meal-plan" data-link="payment.html">
+                <img src="images/e.jpg" alt="Balanced Diet Plan">
+                <h3>Oatmeal with fresh fruits and nuts<br>$50</h3>
+                <p>A plan for a balanced diet</p>
+            </div>
+            <div class="meal-plan" data-link="payment.html">
+                <img src="images/d.jpg" alt="Balanced Diet Plan">
+                <h3>Grilled chicken salad with olive oil dressing<br>$50</h3>
+                <p>A plan for a balanced diet</p>
+            </div>
+            <div class="meal-plan" data-link="payment.html">
+                <img src="images/c.jpg" alt="Balanced Diet Plan">
+                <h3> Scrambled eggs with whole wheat toast and avocado<br>$50</h3>
+                <p>A plan for a balanced diet</p>
+            </div>
+            <div class="meal-plan" data-link="payment.html">
+                <img src="images/b.jpg" alt="Balanced Diet Plan">
+                <h3>Greek yogurt with honey and mixed berries<br>$50</h3>
+                <p>A plan for a balanced diet</p>
+            </div>
+        </div>
+
+        <!-- Recipes Section -->
+        <h2>Healthy Recipes</h2>
+        <div class="recipes">
+            <div class="recipe" data-link="payment.html">
+                <img src="images/grilled-chicken-salad.jpg" alt="Grilled Chicken Salad">
+                <h2>Grilled Chicken Salad<br>$30</h2>
+                <p><b>Ingredients:</b> Chicken, Lettuce, Olive Oil, Lemon</p>
+            </div>
+            <div class="recipe" data-link="payment.html">
+                <img src="images/quinoa-bowl.jpg" alt="Quinoa Bowl">
+                <h2>Quinoa Bowl<br>$20</h2>
+                <p><b>Ingredients:</b> Quinoa, Black Beans, Corn, Avocado</p>
+            </div>
+            <div class="recipe" data-link="payment.html">
+                <img src="images/vegetable-stir-fry.jpg" alt="Vegetable Stir Fry">
+                <h2>Vegetable Stir Fry<br>$15</h2>
+                <p><b>Ingredients:</b> Broccoli, Carrots, Bell Peppers, Soy Sauce</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nutritional Meal Planning. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.meal-plan, .recipe').forEach(item => {
+            item.addEventListener('click', function () {
+                const userPaid = confirm("Payment is required to access this content. Click OK to proceed.");
+                if (userPaid) {
+                    window.location.href = this.getAttribute("data-link");
+                } else {
+                    alert("Have you completed the payment? Click OK to proceed.");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

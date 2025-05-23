@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga & Wellness - BalanceFuel</title>
+    <link rel="stylesheet" href="yoexstyles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <h2 class="logo">BalanceFuel</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mealplan.html">Meal Plans</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="yoga.html" class="active">Yoga</a></li>
+            <li><a href="exercise.html">Exercise</a></li>
+            <li><button id="logout-btn" class="btn">Logout</button></li>
+            <button type="button" class="btn" onclick="window.location.href='index.html'">
+                Back
+            </button>
+        </ul>
+    </nav>
+
+    <header class="hero yoga-hero">
+        <h1>Embrace Wellness with Daily Yoga!</h1>
+        <p>Improve flexibility, reduce stress, and enhance mindfulness.</p>
+    </header>
+
+    <section class="yoga-plans">
+        <h2>Recommended Daily Yoga Poses</h2>
+        <div class="yoga-container">
+            <div class="yoga-card">
+                <img src="images/downward-dog.jpg" alt="Downward Dog">
+                <h3>Downward Dog</h3>
+                <p>Duration: 5 mins | Calories Burned: 50 kcal</p>
+                <button class="learn-more" onclick="openYogaGuide('Downward Dog')">Learn More</button>
+            </div>
+            <div class="yoga-card">
+                <img src="images/warrior-pose.jpg" alt="Warrior Pose">
+                <h3>Warrior Pose</h3>
+                <p>Duration: 10 mins | Calories Burned: 70 kcal</p>
+                <button class="learn-more" onclick="openYogaGuide('Warrior Pose')">Learn More</button>
+            </div>
+            <div class="yoga-card">
+                <img src="images/tree-pose.jpg" alt="Tree Pose">
+                <h3>Tree Pose</h3>
+                <p>Duration: 8 mins | Calories Burned: 60 kcal</p>
+                <button class="learn-more" onclick="openYogaGuide('Tree Pose')">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BalanceFuel. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openYogaGuide(pose) {
+            window.location.href = `yoga-guide.html?pose=${encodeURIComponent(pose)}`;
+        }
+    </script>
+</body>
+</html>

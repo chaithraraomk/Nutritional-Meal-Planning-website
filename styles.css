@@ -1,0 +1,343 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background: linear-gradient(to right, #000000, #000000);
+    color: #ffffff;
+    text-align: center;
+    padding-top: 80px;
+}
+
+/* Navigation Bar */
+nav {
+    background: linear-gradient(to right, #589a08, #07fa1b);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.logo {
+    margin-left: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #ffeaa7;
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-image.jpg') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #ff3e6b;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #ff2a5d;
+    transform: scale(1.1);
+}
+
+/* Meal Plan & Recipe Sections */
+.meal-plan-container, .recipe-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+/* Card Styling */
+.meal-plan, .recipe {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 350px;
+    height: 250px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    color: #ff3e6b;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.meal-plan:hover, .recipe:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.5);
+    color: #ff2a5d;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Meal Plan & Recipe Cards */
+.meal-plan, .recipe {
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0px 10px 20px rgba(0, 176, 32, 0.4);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 250px;
+    height: 280px; /* Set a fixed height */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image Styling - Covers Entire Box */
+.meal-plan img, .recipe img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the box perfectly */
+    position: absolute;
+    z-index: 0; /* Keeps the image behind */
+}
+
+/* Text Overlay - Now Visible on Image */
+.meal-plan span, .recipe span {
+    position: relative;
+    z-index: 2; /* Places text above image */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5); /* Dark transparent background for better readability */
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+/* Hover Effect - Image Becomes Lighter */
+.meal-plan:hover img, .recipe:hover img {
+    filter: brightness(1.3); /* Image becomes lighter */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Poppins',Georgia, 'Times New Roman', Times, serif;
+    color: #231b19;
+    background: linear-gradient(45deg, #f7f3f1, #f1eeeb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(200, 104, 140, 0.6);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 2px 2px 15px rgba(230, 70, 134, 0.8);
+    }
+    to {
+        text-shadow: 4px 4px 20px rgb(230, 64, 161);
+    }
+}
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(219, 207, 32, 0.9);
+    min-width: 120px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #ff7e5f;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: #0a0909;
+    color: rgb(48, 11, 11);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Enhanced Button Styling */
+.btn {
+    background: linear-gradient(135deg, #ff3e6b, #ff1e4d);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(255, 62, 107, 0.5);
+}
+
+/* Hover Effects */
+.btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 25px rgba(255, 30, 77, 0.7);
+}
+
+/* Button Animation */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.6s ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
+
+.btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+}
+
+/* Meal Plan & Recipe Hover Effects */
+.meal-plan:hover, .recipe:hover {
+    transform: scale(1.12);
+    background: rgba(255, 255, 255, 0.6);
+    color: #ff1e4d;
+    box-shadow: 0px 12px 25px rgba(0, 176, 32, 0.5);
+}
+
+/* Dropdown Button Enhancements */
+.dropbtn {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 18px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    background: linear-gradient(135deg, #ffe400, #ffbb00);
+    color: white;
+    border-radius: 25px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.5);
+}
+
+.dropbtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 7px 20px rgba(255, 204, 0, 0.7);
+}
+
+/* Dropdown Animation */
+.dropdown-content {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+

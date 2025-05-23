@@ -1,0 +1,181 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #652b0e, #631516);
+    color: white;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Navigation Menu */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #ff4b1f, #ff9068);
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(255, 72, 0, 0.5);
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    background: linear-gradient(90deg, #ff9068, #ff4b1f);
+    box-shadow: 0px 0px 15px rgba(255, 72, 0, 1);
+    transform: scale(1.1);
+}
+
+/* Hero Sections */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.exercise-hero, .yoga-hero {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
+                url('images/fitness-bg.jpg') center/cover;
+    padding: 150px 20px;
+    text-align: center;
+    color: white;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Cards Section */
+.exercise-container, .yoga-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.exercise-card, .yoga-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card Hover Effect */
+.exercise-card:hover, .yoga-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
+}
+
+.exercise-card img, .yoga-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    font-size: 14px;
+}
+
+/* Button Styling */
+.btn {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #ff4b1f, #ff9068);
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(255, 72, 0, 0.5);
+    display: inline-block;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #ff9068, #ff4b1f);
+    box-shadow: 0px 0px 15px rgba(255, 72, 0, 1);
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #652b0e, #631516);
+    color: white;
+    text-align: center;
+}
+
+/* Exercise & Yoga Guide Sections */
+.exercise-details, .yoga-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.exercise-info, .yoga-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 600px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Styling */
+.exercise-info img, .yoga-info img {
+    width: 80%;
+    max-width: 400px; /* Limits image size */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.3);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Guide - BalanceFuel</title>
+    <link rel="stylesheet" href="yoexstyles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <h2 class="logo">BalanceFuel</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="yoga.html" class="active">Back to Yoga</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero yoga-hero">
+        <h1 id="yoga-title">Yoga Guide</h1>
+        <p id="yoga-description">Discover benefits and techniques of each yoga pose.</p>
+    </header>
+
+    <section class="yoga-details">
+        <div class="yoga-info">
+            <img id="yoga-image" src="" alt="Yoga Pose">
+            <p id="yoga-steps">Loading...</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BalanceFuel. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const pose = params.get("pose");
+
+        const yogaData = {
+            "Downward Dog": {
+                image: "images/downward-dog.jpg",
+                description: "Improves flexibility and strengthens the core.",
+                steps: "1. Start on all fours. 2. Lift hips towards the ceiling, forming an inverted 'V'. 3. Hold the pose and breathe deeply."
+            },
+            "Warrior Pose": {
+                image: "images/warrior-pose.jpg",
+                description: "Enhances balance and builds leg strength.",
+                steps: "1. Step one foot forward and bend the knee. 2. Keep the back leg straight. 3. Stretch arms overhead and hold the pose."
+            },
+            "Tree Pose": {
+                image: "images/tree-pose.jpg",
+                description: "Boosts balance and core strength.",
+                steps: "1. Stand straight and place one foot on the opposite thigh. 2. Bring hands together in a prayer position. 3. Hold the pose and focus."
+            }
+        };
+
+        if (yogaData[pose]) {
+            document.getElementById("yoga-title").innerText = pose;
+            document.getElementById("yoga-description").innerText = yogaData[pose].description;
+            document.getElementById("yoga-image").src = yogaData[pose].image;
+            document.getElementById("yoga-steps").innerText = yogaData[pose].steps;
+        }
+    </script>
+</body>
+</html>
